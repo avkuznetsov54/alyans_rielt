@@ -47,8 +47,10 @@ class MortgageProgramsView(generics.ListAPIView):
                 k = 'programs_target__target_name' + '__in'
                 v = v.split(',')
                 params.update({k: v})
-            if k == 'property_value':
+            if k == 'sum_credit':
+                # print('property_value 1', type(v))
                 v = re.sub("\D", "", v)
+                # print('property_value 2', type(v))
                 k1 = 'min_sum_credit' + '__lte'
                 params.update({k1: v})
                 k2 = 'max_sum_credit' + '__gte'

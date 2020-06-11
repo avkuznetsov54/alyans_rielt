@@ -2,9 +2,16 @@
   <div>
     <v-card>
       <v-card-text>
-        <v-form v-on:submit.prevent="filterMortgages((pageDef = 1))">
+        <v-form
+          v-on:submit.prevent="filterMortgages((pageDef = 1))"
+          ref="form"
+          lazy-validation
+        >
           <!--      <v-form v-on:change="filterMortgages">-->
           <v-container fluid>
+            <v-row>
+              <!--              <v-btn outlined color="indigo">Outlined Button</v-btn>-->
+            </v-row>
             <v-row>
               <v-col cols="12" md="3">
                 <v-autocomplete
@@ -21,12 +28,12 @@
                     <!--                    <span>{{ item }} </span>-->
                     <!--                  </span>-->
                     <span v-if="index === 0" class="ml-1 grey--text caption"
-                      >Выбранно: {{ filters.bank_name.length }} шт.</span
+                      >+ {{ filters.bank_name.length }} шт.</span
                     >
                   </template>
                 </v-autocomplete>
               </v-col>
-              <v-col cols="12" md="3">
+              <v-col cols="12" md="2">
                 <v-select
                   multiple
                   label="Цель ипотеки"
@@ -41,31 +48,81 @@
                     <!--                    <span>{{ item }} </span>-->
                     <!--                  </span>-->
                     <span v-if="index === 0" class="ml-1 grey--text caption"
-                      >Выбранно:
-                      {{ filters.names_target_credits.length }} шт.</span
+                      >+ {{ filters.names_target_credits.length }} шт.</span
                     >
                   </template>
                 </v-select>
               </v-col>
-              <v-col cols="12" md="2">
-                <v-text-field
-                  v-model="filters.property_value"
-                  label="Стоимость недвиж., руб"
-                  placeholder="Любая"
-                  min="0"
-                  dense
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" md="2">
-                <v-text-field
-                  v-model="num_first_payment"
-                  label="Первоначальный взнос, руб"
-                  placeholder="Любой"
-                  min="0"
-                  dense
-                  :suffix="procent_first_payment"
-                ></v-text-field>
-              </v-col>
+
+              <!--              <v-col cols="12" md="1">-->
+              <!--&lt;!&ndash;                <v-btn fab x-small color="secondary"><v-icon>mdi-cached</v-icon></v-btn>&ndash;&gt;-->
+              <!--                -->
+              <!--              </v-col>-->
+
+              <template v-if="!filterOnSumCredit">
+                <v-col cols="12" md="3">
+                  <div class="collom-flex">
+                    <v-text-field
+                      v-model="filters.property_value"
+                      label="Стоимость недвиж., руб"
+                      placeholder="Любая"
+                      min="0"
+                      dense
+                    ></v-text-field>
+                        <v-btn
+                          icon
+                          color="primary"
+                          @click="changeFilterOnSumCredit"
+                        >
+                          <v-icon>mdi-cached</v-icon>
+                        </v-btn>
+                  </div>
+                </v-col>
+                <v-col cols="12" md="2">
+                  <v-text-field
+                    v-model="num_first_payment"
+                    label="Первоначальный взнос, руб"
+                    placeholder="Любой"
+                    :rules="nfpRules"
+                    min="0"
+                    dense
+                    :suffix="procent_first_payment"
+                  ></v-text-field>
+                </v-col>
+              </template>
+              <template v-else>
+                <v-col cols="12" md="3">
+                  <div class="collom-flex">
+                    <v-text-field
+                      v-model="filters.sum_credit"
+                      label="Сумма кредита, руб"
+                      placeholder="Любая"
+                      min="0"
+                      dense
+                    ></v-text-field>
+
+                        <v-btn
+                          icon
+                          color="primary"
+                          @click="changeFilterOnSumCredit"
+                        >
+                          <v-icon>mdi-cached</v-icon>
+                        </v-btn>
+                  </div>
+                </v-col>
+                <v-col cols="12" md="2">
+                  <v-text-field
+                    v-model="num_first_payment"
+                    label="Первоначальный взнос, руб"
+                    placeholder="Любой"
+                    :rules="nfpRules"
+                    min="0"
+                    dense
+                    :suffix="procent_first_payment"
+                  ></v-text-field>
+                </v-col>
+              </template>
+
               <v-col cols="12" md="2">
                 <v-text-field
                   v-model="filters.time_credit"
@@ -114,7 +171,6 @@
                 </v-col>
               </v-row>
               <v-row>
-
                 <v-col cols="12" md="2">
                   <v-checkbox
                     dense
@@ -133,18 +189,18 @@
 
                 <v-col cols="12" md="2">
                   <v-checkbox
-                          dense
-                          v-model="filters.collateral_object_is_active"
-                          label="Залоговый объект"
+                    dense
+                    v-model="filters.collateral_object_is_active"
+                    label="Залоговый объект"
                   ></v-checkbox>
                 </v-col>
 
                 <v-col cols="12" md="2">
                   <v-checkbox
-                          dense
-                          v-model="filters.wetpoint_transfer"
-                          value="yes"
-                          label="Перенос мокрой точки"
+                    dense
+                    v-model="filters.wetpoint_transfer"
+                    value="yes"
+                    label="Перенос мокрой точки"
                   ></v-checkbox>
                 </v-col>
 
@@ -176,10 +232,10 @@
 
                 <v-col cols="12" md="2">
                   <v-checkbox
-                          dense
-                          v-model="filters.is_rate_salary"
-                          value="yes"
-                          label="Программы для зарплатников"
+                    dense
+                    v-model="filters.is_rate_salary"
+                    value="yes"
+                    label="Программы для зарплатников"
                   ></v-checkbox>
                 </v-col>
               </v-row>
@@ -199,7 +255,7 @@
                     >Найти
                   </v-btn>
                   <v-btn color="primary" class="mx-1" @click="clearFilter()"
-                    ><v-icon>mdi-cached</v-icon>
+                    ><v-icon>mdi-broom</v-icon>
                   </v-btn>
                   <v-btn color="primary" class="mx-1" @click="toggleSearch"
                     ><v-icon>
@@ -403,7 +459,7 @@
 
                         <span class="caption">
                           <span class="font-weight-black before-span-text"
-                          >Завышение:</span
+                            >Завышение:</span
                           >
 
                           {{ mort.overstatement_is_active ? "Да" : "Нет"
@@ -416,7 +472,7 @@
 
                         <span class="caption">
                           <span class="font-weight-black before-span-text"
-                          >Исключение супруги(а) согласием:</span
+                            >Исключение супруги(а) согласием:</span
                           >
 
                           {{ mort.spouse_exclusion_is_active ? "Да" : "Нет"
@@ -426,8 +482,6 @@
                               : ""
                           }}
                         </span>
-
-
 
                         <span class="caption">
                           <span class="font-weight-black before-span-text"
@@ -483,7 +537,6 @@
 
                           {{ mort.work_experience }} месяцев
                         </span>
-
                       </v-list-item-content>
                     </v-list-item>
                   </v-col>
@@ -499,7 +552,7 @@
 
                         <span class="caption">
                           <span class="font-weight-black before-span-text"
-                          >Залоговый объект:</span
+                            >Залоговый объект:</span
                           >
 
                           {{ mort.collateral_object_is_active ? "Да" : "Нет"
@@ -590,7 +643,7 @@
 
                         <span class="caption">
                           <span class="font-weight-black before-span-text"
-                          >Перенос мокрой точки:</span
+                            >Перенос мокрой точки:</span
                           >
                           {{
                             mort.wetpoint_transfer == "yes"
@@ -643,7 +696,7 @@
 
                         <span class="caption">
                           <span class="font-weight-black before-span-text"
-                          >Время на решение банка:</span
+                            >Время на решение банка:</span
                           >
                           {{ mort.time_for_bank_decision }}
                         </span>
@@ -764,7 +817,9 @@ export default {
       visibleSearch: false,
       num_first_payment: "",
       procent_first_payment: "",
-      progMonthlyPayment: ""
+      progMonthlyPayment: "",
+      nfpRules: [],
+      filterOnSumCredit: false
     };
   },
   computed: {
@@ -808,6 +863,7 @@ export default {
       this.showFullMortgage = !this.showFullMortgage;
     },
     clearFilter() {
+      this.$refs.form.resetValidation();
       this.page = 1;
       this.filters = [];
       this.num_first_payment = "";
@@ -823,14 +879,31 @@ export default {
       return this.filters;
     },
     filterMortgages(pageDef) {
+      // сдесь проверяем если в поле "стоимость недвижимости" что-то внесли, то и
+      // "первоночальный взнос" необходимо заполнить
+      if (this.filters.property_value && !this.filters.first_payment) {
+        this.nfpRules.push(v => !!v || "Не должно быть пустым.");
+        this.$refs.form.validate();
+        // this.errorMessages = "Не должно быть пустым.";
+        return false;
+      } else if (this.filters.property_value && this.filters.first_payment) {
+        const pv = Number(this.filters.property_value.replace(/\s+/g, ""));
+        const fp = Number(this.num_first_payment.replace(/\s+/g, ""));
+        // console.log(pv, fp);
+        this.filters["sum_credit"] = pv - fp;
+        // console.log(this.filters["sum_credit"]);
+      }
+
+      // console.log(this.filters);
       const params = new URLSearchParams();
+
       for (let item in this.filters) {
         if (this.filters[item] !== "" && this.filters[item] !== null) {
           params.append(item, this.filters[item]);
         }
-
         // console.log(this.filters[item]);
       }
+
       params.append("page", pageDef);
       // console.log(page);
       this.page = pageDef;
@@ -930,6 +1003,25 @@ export default {
         } else {
           this.procent_first_payment = "";
         }
+      } else if (
+        this.filters.sum_credit !== undefined &&
+        this.num_first_payment !== ""
+      ) {
+        // console.log("33333");
+        this.filters.first_payment = Math.floor(
+          (Number(this.num_first_payment.replace(/\s+/g, "")) * 100) /
+            (Number(this.filters.sum_credit.replace(/\s+/g, "")) +
+              Number(this.num_first_payment.replace(/\s+/g, "")))
+        );
+        let pr =
+          (Number(this.num_first_payment.replace(/\s+/g, "")) * 100) /
+          (Number(this.filters.sum_credit.replace(/\s+/g, "")) +
+            Number(this.num_first_payment.replace(/\s+/g, "")));
+        if (pr >= 0 && pr <= 50) {
+          this.procent_first_payment = pr.toFixed(2) + "%";
+        } else {
+          this.procent_first_payment = "";
+        }
       } else {
         this.procent_first_payment = "";
         // console.log("watchValue => ");
@@ -938,6 +1030,15 @@ export default {
     onPageChange(page) {
       // this.page = page;
       this.filterMortgages(page);
+    },
+    changeFilterOnSumCredit() {
+      this.filterOnSumCredit = !this.filterOnSumCredit;
+      delete this.filters.property_value;
+      delete this.filters.sum_credit;
+      delete this.filters.first_payment;
+      this.procent_first_payment = "";
+      this.num_first_payment = "";
+      this.nfpRules = [];
     }
   },
   created() {
@@ -972,6 +1073,7 @@ export default {
         if (newValue === "" || newValue === undefined) {
           this.filters.first_payment = "";
           this.procent_first_payment = "";
+          this.nfpRules = [];
           return true;
         }
         this.filters.property_value = this.thousandSeparator(newValue);
@@ -983,13 +1085,14 @@ export default {
       if (newValue === "" || newValue === undefined) {
         this.filters.first_payment = "";
         this.procent_first_payment = "";
+        this.nfpRules = [];
         return true;
       }
       this.num_first_payment = this.thousandSeparator(newValue);
       // console.log("watch => " + this.num_first_payment);
       // console.log(Number(this.filters.property_value));
       this.watchValue();
-    }
+    },
     // "filters.time_credit": {
     //   // eslint-disable-next-line no-unused-vars
     //   handler: function(v) {
@@ -999,6 +1102,22 @@ export default {
     //   },
     //   deep: true
     // }
+    "filters.sum_credit": {
+      handler: function(newValue) {
+        if (this.filterOnSumCredit) {
+          // console.log(newValue);
+          if (newValue === "" || newValue === undefined) {
+            this.filters.first_payment = "";
+            this.procent_first_payment = "";
+            this.nfpRules = [];
+            return true;
+          }
+          this.filters.sum_credit = this.thousandSeparator(newValue);
+          this.watchValue();
+        }
+      },
+      deep: true
+    }
   }
 };
 </script>
@@ -1039,5 +1158,8 @@ export default {
   margin-right: 4px;
   background-color: #efefef;
   padding: 0 4px;
+}
+.collom-flex {
+  display: flex;
 }
 </style>
