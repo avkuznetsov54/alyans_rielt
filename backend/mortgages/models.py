@@ -34,16 +34,23 @@ class MortgagePrograms(models.Model):
     is_visible = models.BooleanField(default=False, verbose_name='Отображать, Да/нет')
     programs_bank = models.ForeignKey(Banks, on_delete=models.CASCADE, verbose_name='Название Банка', blank=False)
     programs_target = models.ManyToManyField(TargetCredits, verbose_name='Цель программы', blank=True)
-    programs_name = models.CharField(max_length=150, db_index=True, blank=False, verbose_name='Название ипотечной программы')
+    programs_name = models.CharField(max_length=150, db_index=True, blank=False,
+                                     verbose_name='Название ипотечной программы')
     rate = models.FloatField(db_index=True, blank=False, verbose_name='Ставка')
     rate_salary = models.FloatField(db_index=True, null=True, blank=True, verbose_name='Ставка, для зарплатников')
     first_payment = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Первоначальный взнос')
-    min_sum_credit = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Минимальная сумма кредита, руб')
-    max_sum_credit = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Максимальная сумма кредита, руб')
-    min_time_credit = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Минимальный срок кредита, лет')
-    max_time_credit = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Максимальный срок кредита, лет')
-    min_borrower_age = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Минимальный возраст заёмщика')
-    max_borrower_age = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Максимальный возраст заёмщика')
+    min_sum_credit = models.IntegerField(db_index=True, null=True, blank=True,
+                                         verbose_name='Минимальная сумма кредита, руб')
+    max_sum_credit = models.IntegerField(db_index=True, null=True, blank=True,
+                                         verbose_name='Максимальная сумма кредита, руб')
+    min_time_credit = models.IntegerField(db_index=True, null=True, blank=True,
+                                          verbose_name='Минимальный срок кредита, лет')
+    max_time_credit = models.IntegerField(db_index=True, null=True, blank=True,
+                                          verbose_name='Максимальный срок кредита, лет')
+    min_borrower_age = models.IntegerField(db_index=True, null=True, blank=True,
+                                           verbose_name='Минимальный возраст заёмщика')
+    max_borrower_age = models.IntegerField(db_index=True, null=True, blank=True,
+                                           verbose_name='Максимальный возраст заёмщика')
 
     work_experience = models.IntegerField(db_index=True, null=True, blank=True, verbose_name='Стаж на последнем месте')
     mandatory_documents = models.TextField(blank=True, verbose_name='Обязательные документы')
@@ -53,36 +60,59 @@ class MortgagePrograms(models.Model):
     understatement_is_active = models.BooleanField(default=False, verbose_name='Занижение, Есть/нет')
     understatement_comment = models.CharField(max_length=255, blank=True, verbose_name='Комментарий к занижению')
 
+    overstatement_is_active = models.BooleanField(default=False, verbose_name='Завышение, Есть/нет')
+    overstatement_comment = models.CharField(max_length=255, blank=True, verbose_name='Комментарий к завышению')
+
+    spouse_exclusion_is_active = models.BooleanField(default=False, verbose_name='Исключение супруги(а) согласием')
+    spouse_exclusion_comment = models.CharField(max_length=255, blank=True,
+                                                verbose_name='Комментарий к исключению супруги(а)')
+
     collateral_object_is_active = models.BooleanField(default=False, verbose_name='Залоговый объект')
-    collateral_object_comment = models.CharField(max_length=255, blank=True, verbose_name='Комментарий к залоговый объект')
+    collateral_object_comment = models.CharField(max_length=255, blank=True,
+                                                 verbose_name='Комментарий к залоговый объект')
 
     co_borrowers = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Созаемщики')
     commission = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комиссия')
-    seller_registration = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Регистрация продавца')
+    seller_registration = models.CharField(max_length=255, db_index=True, blank=True,
+                                           verbose_name='Регистрация продавца')
 
     ANSWER_CHOICES = (
         ('yes', 'Да'),
         ('no', 'Нет')
     )
 
-    express_issue = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Экспресс выдача')
-    inclusion_children = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Включение детей в число собственников')
+    express_issue = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                     verbose_name='Экспресс выдача')
+    inclusion_children = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                          verbose_name='Включение детей в число собственников')
 
     room = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Комната')
     room_comment = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комментарий к Комната')
     share = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Доля')
     share_comment = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комментарий к Доля')
-    private_house = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Частный дом')
-    private_comment = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комментарий к Частный дом')
-    apartments = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Апартаменты')
-    apartments_comment = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комментарий к Апартаменты')
-    redevelopment = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Перепланировка')
-    redevelopment_comment = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комментарий к Перепланировка')
+    private_house = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                     verbose_name='Частный дом')
+    private_comment = models.CharField(max_length=255, db_index=True, blank=True,
+                                       verbose_name='Комментарий к Частный дом')
+    apartments = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                  verbose_name='Апартаменты')
+    apartments_comment = models.CharField(max_length=255, db_index=True, blank=True,
+                                          verbose_name='Комментарий к Апартаменты')
+    redevelopment = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                     verbose_name='Перепланировка')
+    redevelopment_comment = models.CharField(max_length=255, db_index=True, blank=True,
+                                             verbose_name='Комментарий к Перепланировка')
+
+    wetpoint_transfer = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                         verbose_name='Перенос мокрой точки')
+    wetpoint_transfer_comment = models.CharField(max_length=255, db_index=True, blank=True,
+                                                 verbose_name='Комментарий к мокрой точки')
 
     overlap = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Перекрытия')
     storeys = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Этажность')
     housing_wear = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Износ жилья')
-    req_tech_docs = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Требования к техническим документам')
+    req_tech_docs = models.CharField(max_length=255, db_index=True, blank=True,
+                                     verbose_name='Требования к техническим документам')
     add_info = models.TextField(db_index=True, blank=True, verbose_name='Дополнительная информация')
     date_modified = models.DateTimeField(auto_now=True, editable=True, verbose_name='Дата изменения')
 
