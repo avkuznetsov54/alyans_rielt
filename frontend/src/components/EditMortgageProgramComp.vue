@@ -224,22 +224,59 @@
                             ></v-textarea>
                           </v-col>
                         </v-row>
-
                         <v-row class="mb-7">
                           <v-col cols="12" sm="4" md="4">
                             <v-checkbox
-                                    v-model="editedItem.collateral_object_is_active"
-                                    label="Залоговый объект"
-                                    color="primary"
+                              v-model="editedItem.overstatement_is_active"
+                              label="Завышение, Есть/нет"
+                              color="primary"
                             ></v-checkbox>
                           </v-col>
                           <v-col cols="12" sm="4" md="8">
                             <v-textarea
-                                    v-model="editedItem.collateral_object_comment"
-                                    label="Комментарий к залоговый объект"
-                                    placeholder=" "
-                                    auto-grow
-                                    rows="1"
+                              v-model="editedItem.overstatement_comment"
+                              label="Комментарий к завышению"
+                              placeholder=" "
+                              auto-grow
+                              rows="1"
+                            ></v-textarea>
+                          </v-col>
+                        </v-row>
+
+                        <v-row class="mb-7">
+                          <v-col cols="12" sm="4" md="4">
+                            <v-checkbox
+                              v-model="editedItem.collateral_object_is_active"
+                              label="Залоговый объект"
+                              color="primary"
+                            ></v-checkbox>
+                          </v-col>
+                          <v-col cols="12" sm="4" md="8">
+                            <v-textarea
+                              v-model="editedItem.collateral_object_comment"
+                              label="Комментарий к залоговый объект"
+                              placeholder=" "
+                              auto-grow
+                              rows="1"
+                            ></v-textarea>
+                          </v-col>
+                        </v-row>
+
+                        <v-row class="mb-7">
+                          <v-col cols="12" sm="4" md="4">
+                            <v-checkbox
+                              v-model="editedItem.spouse_exclusion_is_active"
+                              label="Исключение супруги(а) согласием"
+                              color="primary"
+                            ></v-checkbox>
+                          </v-col>
+                          <v-col cols="12" sm="4" md="8">
+                            <v-textarea
+                              v-model="editedItem.spouse_exclusion_comment"
+                              label="Комментарий к исключению супруги(а)"
+                              placeholder=" "
+                              auto-grow
+                              rows="1"
                             ></v-textarea>
                           </v-col>
                         </v-row>
@@ -372,6 +409,7 @@
                             ></v-textarea>
                           </v-col>
                         </v-row>
+
                         <v-row class="mb-7">
                           <v-col cols="12" sm="4" md="4">
                             <v-select
@@ -394,6 +432,30 @@
                             ></v-textarea>
                           </v-col>
                         </v-row>
+
+                        <v-row class="mb-7">
+                          <v-col cols="12" sm="4" md="4">
+                            <v-select
+                              v-model="editedItem.wetpoint_transfer"
+                              :items="itemsYesNo"
+                              item-text="text"
+                              item-value="value"
+                              label="Перенос мокрой точки"
+                              dense
+                            ></v-select>
+                          </v-col>
+                          <v-col cols="12" sm="4" md="8">
+                            <v-textarea
+                              v-model="editedItem.wetpoint_transfer_comment"
+                              label="Комментарий к мокрой точки"
+                              placeholder=" "
+                              auto-grow
+                              rows="1"
+                              dense
+                            ></v-textarea>
+                          </v-col>
+                        </v-row>
+
                         <v-row class="mb-7">
                           <v-col cols="12" sm="4" md="3">
                             <v-textarea
@@ -895,7 +957,8 @@ export default {
       h = date.getHours();
       m = date.getMinutes();
       s = date.getSeconds();
-      const correct_date = day + "." + month + "." + year + " " + h + ":" + m + ":" + s;
+      const correct_date =
+        day + "." + month + "." + year + " " + h + ":" + m + ":" + s;
       return correct_date;
     }
   },
@@ -1061,11 +1124,23 @@ export default {
       ] = this.editedItem.understatement_comment;
 
       formData[
+        "overstatement_is_active"
+      ] = this.editedItem.overstatement_is_active;
+      formData["overstatement_comment"] = this.editedItem.overstatement_comment;
+
+      formData[
         "collateral_object_is_active"
-        ] = this.editedItem.collateral_object_is_active;
+      ] = this.editedItem.collateral_object_is_active;
       formData[
         "collateral_object_comment"
-        ] = this.editedItem.collateral_object_comment;
+      ] = this.editedItem.collateral_object_comment;
+
+      formData[
+        "spouse_exclusion_is_active"
+      ] = this.editedItem.spouse_exclusion_is_active;
+      formData[
+        "spouse_exclusion_comment"
+      ] = this.editedItem.spouse_exclusion_comment;
 
       formData["co_borrowers"] = this.editedItem.co_borrowers;
       formData["commission"] = this.editedItem.commission;
@@ -1082,6 +1157,12 @@ export default {
       formData["apartments_comment"] = this.editedItem.apartments_comment;
       formData["redevelopment"] = this.editedItem.redevelopment;
       formData["redevelopment_comment"] = this.editedItem.redevelopment_comment;
+
+      formData["wetpoint_transfer"] = this.editedItem.wetpoint_transfer;
+      formData[
+        "wetpoint_transfer_comment"
+      ] = this.editedItem.wetpoint_transfer_comment;
+
       formData["overlap"] = this.editedItem.overlap;
       formData["storeys"] = this.editedItem.storeys;
       formData["housing_wear"] = this.editedItem.housing_wear;

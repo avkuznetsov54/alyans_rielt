@@ -114,14 +114,6 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12" md="2">
-                  <v-checkbox
-                    dense
-                    v-model="filters.is_rate_salary"
-                    value="yes"
-                    label="Программы для зарплатников"
-                  ></v-checkbox>
-                </v-col>
 
                 <v-col cols="12" md="2">
                   <v-checkbox
@@ -134,8 +126,33 @@
                 <v-col cols="12" md="2">
                   <v-checkbox
                     dense
-                    v-model="filters.collateral_object_is_active"
-                    label="Залоговый объект"
+                    v-model="filters.overstatement_is_active"
+                    label="Завышение"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="2">
+                  <v-checkbox
+                          dense
+                          v-model="filters.collateral_object_is_active"
+                          label="Залоговый объект"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="2">
+                  <v-checkbox
+                          dense
+                          v-model="filters.wetpoint_transfer"
+                          value="yes"
+                          label="Перенос мокрой точки"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="4">
+                  <v-checkbox
+                    dense
+                    v-model="filters.spouse_exclusion_is_active"
+                    label="Исключение супруги(а) согласием"
                   ></v-checkbox>
                 </v-col>
 
@@ -148,12 +165,21 @@
                   ></v-checkbox>
                 </v-col>
 
-                <v-col cols="12" md="3">
+                <v-col cols="12" md="4">
                   <v-checkbox
                     dense
                     v-model="filters.inclusion_children"
                     value="yes"
                     label="Включение детей в число собственников"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="2">
+                  <v-checkbox
+                          dense
+                          v-model="filters.is_rate_salary"
+                          value="yes"
+                          label="Программы для зарплатников"
                   ></v-checkbox>
                 </v-col>
               </v-row>
@@ -163,7 +189,7 @@
               <v-col cols="12" sm="6" md="3" class="is-search-text">
                 <div class="subtitle-1">
                   <span>
-                    Найдено {{ GET_MORTGAGES_DATA_COUNT }} программы
+                    Найдено программ: {{ GET_MORTGAGES_DATA_COUNT }}
                   </span>
                 </div>
               </v-col>

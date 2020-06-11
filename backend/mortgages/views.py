@@ -81,10 +81,18 @@ class MortgageProgramsView(generics.ListAPIView):
             if k == 'understatement_is_active':
                 if v == 'true':
                     params.update({k: True})
+            if k == 'overstatement_is_active':
+                if v == 'true':
+                    params.update({k: True})
+            if k == 'spouse_exclusion_is_active':
+                if v == 'true':
+                    params.update({k: True})
             if k == 'collateral_object_is_active':
                 if v == 'true':
                     params.update({k: True})
             if k == 'express_issue':
+                params.update({k: v})
+            if k == 'wetpoint_transfer':
                 params.update({k: v})
             if k == 'inclusion_children':
                 if v != 'null':
