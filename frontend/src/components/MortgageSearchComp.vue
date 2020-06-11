@@ -119,7 +119,6 @@
                     dense
                     v-model="filters.is_rate_salary"
                     value="yes"
-
                     label="Программы для зарплатников"
                   ></v-checkbox>
                 </v-col>
@@ -128,17 +127,15 @@
                   <v-checkbox
                     dense
                     v-model="filters.understatement_is_active"
-
                     label="Занижение"
                   ></v-checkbox>
                 </v-col>
 
                 <v-col cols="12" md="2">
                   <v-checkbox
-                          dense
-                          v-model="filters.collateral_object_is_active"
-
-                          label="Залоговый объект"
+                    dense
+                    v-model="filters.collateral_object_is_active"
+                    label="Залоговый объект"
                   ></v-checkbox>
                 </v-col>
 
@@ -146,7 +143,6 @@
                   <v-checkbox
                     dense
                     v-model="filters.express_issue"
-
                     value="yes"
                     label="Экспресс выдача"
                   ></v-checkbox>
@@ -169,9 +165,7 @@
                   <span>
                     Найдено {{ GET_MORTGAGES_DATA_COUNT }} программы
                   </span>
-
                 </div>
-
               </v-col>
               <v-col cols="12" sm="6" md="4">
                 <div class="float-right">
@@ -334,9 +328,10 @@
                         <!--                      class="mb-3 body-1 font-weight-bold grey&#45;&#45;text text&#45;&#45;darken-3"-->
                         <!--                      >Условия ипотеки-->
                         <!--                    </v-list-item-title>-->
-                        <span class="caption"
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Цель:</span
                           >
-                          <span class="font-weight-black before-span-text">Цель:</span>
 
                           <span
                             v-for="(item, index) in mort.targets"
@@ -368,7 +363,9 @@
                         <!--                      {{ mort.max_time_credit }} лет-->
                         <!--                    </span>-->
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Занижение:</span>
+                          <span class="font-weight-black before-span-text"
+                            >Занижение:</span
+                          >
 
                           {{ mort.understatement_is_active ? "Да" : "Нет"
                           }}{{
@@ -379,37 +376,58 @@
                         </span>
 
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Залоговый объект:</span>
+                          <span class="font-weight-black before-span-text"
+                          >Завышение:</span
+                          >
 
-                          {{ mort.collateral_object_is_active ? "Да" : "Нет"
+                          {{ mort.overstatement_is_active ? "Да" : "Нет"
                           }}{{
-                            mort.collateral_object_comment
-                              ? ", " + mort.collateral_object_comment
+                            mort.overstatement_comment
+                              ? ", " + mort.overstatement_comment
                               : ""
                           }}
                         </span>
 
-                        <span class="caption"
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                          >Исключение супруги(а) согласием:</span
                           >
-                          <span class="font-weight-black before-span-text">Созаёмщики:</span>
+
+                          {{ mort.spouse_exclusion_is_active ? "Да" : "Нет"
+                          }}{{
+                            mort.spouse_exclusion_comment
+                              ? ", " + mort.spouse_exclusion_comment
+                              : ""
+                          }}
+                        </span>
+
+
+
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Созаёмщики:</span
+                          >
 
                           {{ mort.co_borrowers }}
                         </span>
-                        <span class="caption"
-                          >
-                          <span class="font-weight-black before-span-text">Комиссия: </span>
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Комиссия:
+                          </span>
 
                           {{ mort.commission }}
                         </span>
-                        <span class="caption"
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Регистрация продавца:</span
                           >
-                          <span class="font-weight-black before-span-text">Регистрация продавца:</span>
 
                           {{ mort.seller_registration }}
                         </span>
-                        <span class="caption"
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Экспресс выдача:</span
                           >
-                          <span class="font-weight-black before-span-text">Экспресс выдача:</span>
 
                           {{
                             mort.express_issue == "yes"
@@ -419,9 +437,10 @@
                               : ""
                           }}
                         </span>
-                        <span class="caption"
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Включение детей в число собственников:</span
                           >
-                          <span class="font-weight-black before-span-text">Включение детей в число собственников:</span>
 
                           {{
                             mort.inclusion_children == "yes"
@@ -431,17 +450,14 @@
                               : ""
                           }}
                         </span>
-                        <span class="caption"
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Стаж на последнем месте от:</span
                           >
-                          <span class="font-weight-black before-span-text">Стаж на последнем месте от:</span>
 
                           {{ mort.work_experience }} месяцев
                         </span>
-                        <span class="caption"
-                          >
-                          <span class="font-weight-black before-span-text">Время на решение банка:</span>
-                          {{ mort.time_for_bank_decision }}
-                        </span>
+
                       </v-list-item-content>
                     </v-list-item>
                   </v-col>
@@ -456,7 +472,22 @@
                         <!--                    </v-list-item-title>-->
 
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Комната:</span>
+                          <span class="font-weight-black before-span-text"
+                          >Залоговый объект:</span
+                          >
+
+                          {{ mort.collateral_object_is_active ? "Да" : "Нет"
+                          }}{{
+                            mort.collateral_object_comment
+                              ? ", " + mort.collateral_object_comment
+                              : ""
+                          }}
+                        </span>
+
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                            >Комната:</span
+                          >
                           {{
                             mort.room == "yes"
                               ? "Да"
@@ -468,7 +499,9 @@
                           }}
                         </span>
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Доля:</span>
+                          <span class="font-weight-black before-span-text"
+                            >Доля:</span
+                          >
                           {{
                             mort.share == "yes"
                               ? "Да"
@@ -480,7 +513,9 @@
                           }}
                         </span>
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Частный дом:</span>
+                          <span class="font-weight-black before-span-text"
+                            >Частный дом:</span
+                          >
                           {{
                             mort.private_house == "yes"
                               ? "Да"
@@ -494,7 +529,9 @@
                           }}
                         </span>
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Апартаменты:</span>
+                          <span class="font-weight-black before-span-text"
+                            >Апартаменты:</span
+                          >
                           {{
                             mort.apartments == "yes"
                               ? "Да"
@@ -507,8 +544,11 @@
                               : ""
                           }}
                         </span>
+
                         <span class="caption">
-                          <span class="font-weight-black before-span-text">Перепланировка:</span>
+                          <span class="font-weight-black before-span-text"
+                            >Перепланировка:</span
+                          >
                           {{
                             mort.redevelopment == "yes"
                               ? "Да"
@@ -521,21 +561,47 @@
                               : ""
                           }}
                         </span>
+
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                          >Перенос мокрой точки:</span
+                          >
+                          {{
+                            mort.wetpoint_transfer == "yes"
+                              ? "Да"
+                              : mort.wetpoint_transfer == "no"
+                              ? "Нет"
+                              : ""
+                          }}{{
+                            mort.wetpoint_transfer_comment
+                              ? ", " + mort.wetpoint_transfer_comment
+                              : ""
+                          }}
+                        </span>
+
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Перекрытия:</span>
-                            {{ mort.overlap }}
+                          <span class="font-weight-black before-span-text"
+                            >Перекрытия:</span
+                          >
+                          {{ mort.overlap }}
                         </p>
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Этажность:</span>
-                            {{ mort.storeys }}
+                          <span class="font-weight-black before-span-text"
+                            >Этажность:</span
+                          >
+                          {{ mort.storeys }}
                         </p>
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Износ жилья:</span>
-                            {{ mort.housing_wear }}
+                          <span class="font-weight-black before-span-text"
+                            >Износ жилья:</span
+                          >
+                          {{ mort.housing_wear }}
                         </p>
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Технические документы:</span>
-                            {{ mort.req_tech_docs }}
+                          <span class="font-weight-black before-span-text"
+                            >Технические документы:</span
+                          >
+                          {{ mort.req_tech_docs }}
                         </p>
                       </v-list-item-content>
                     </v-list-item>
@@ -549,17 +615,30 @@
                         <!--                          </div>-->
                         <!--                        </template>-->
 
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                          >Время на решение банка:</span
+                          >
+                          {{ mort.time_for_bank_decision }}
+                        </span>
+
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Обязательные документы:</span>
-                            {{ mort.mandatory_documents }}
+                          <span class="font-weight-black before-span-text"
+                            >Обязательные документы:</span
+                          >
+                          {{ mort.mandatory_documents }}
                         </p>
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Документ подтверждение дохода:</span>
-                            {{ mort.proof_of_income_document }}
+                          <span class="font-weight-black before-span-text"
+                            >Документ подтверждение дохода:</span
+                          >
+                          {{ mort.proof_of_income_document }}
                         </p>
                         <p class="caption mb-1">
-                          <span class="font-weight-black before-span-text">Дополнительная информация:</span>
-                            {{ mort.add_info }}
+                          <span class="font-weight-black before-span-text"
+                            >Дополнительная информация:</span
+                          >
+                          {{ mort.add_info }}
                         </p>
                       </v-list-item-content>
                     </v-list-item>
@@ -629,7 +708,11 @@
         </v-expansion-panel>
       </v-expansion-panels>
       <div class="text-center mt-5">
-        <v-pagination v-model="page" :length="lenPag" @input="onPageChange"></v-pagination>
+        <v-pagination
+          v-model="page"
+          :length="lenPag"
+          @input="onPageChange"
+        ></v-pagination>
       </div>
     </template>
   </div>
