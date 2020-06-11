@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MortgageSearchComp.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1081">
-              <caret line="167" column="38" selection-start-line="167" selection-start-column="38" selection-end-line="167" selection-end-column="38" />
+            <state relative-caret-position="549">
+              <caret line="846" column="35" lean-forward="true" selection-start-line="846" selection-start-column="35" selection-end-line="846" selection-end-column="35" />
               <folding>
                 <element signature="n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#v-col#2;n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
@@ -54,7 +54,6 @@
                 <element signature="n#v-col#4;n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#v-row#0;n#template#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#v-col#2;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#v-col#3;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -98,7 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TARGET_CREDITS_NAME_DATA</find>
       <find>TARGET_CREDITS_DATA</find>
       <find>user_info</find>
       <find>SET_UPDATE_TARGET_CREDITS_ALL_DATA&quot;</find>
@@ -128,6 +126,7 @@
       <find>зани</find>
       <find>Занижение</find>
       <find>Найдено</find>
+      <find>Для расчёта ежемесечного</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -188,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/components/layouts/MainLayout.vue" />
         <option value="$PROJECT_DIR$/src/store/modules/mortgages/mortgages.js" />
         <option value="$PROJECT_DIR$/src/api/axios-base.js" />
-        <option value="$PROJECT_DIR$/src/components/MortgageSearchComp.vue" />
         <option value="$PROJECT_DIR$/src/components/EditMortgageProgramComp.vue" />
+        <option value="$PROJECT_DIR$/src/components/MortgageSearchComp.vue" />
       </list>
     </option>
   </component>
@@ -461,12 +460,12 @@
       <workItem from="1591180045314" duration="3002000" />
       <workItem from="1591201361536" duration="15783000" />
       <workItem from="1591251187359" duration="205000" />
-      <workItem from="1591847898743" duration="4716000" />
+      <workItem from="1591847898743" duration="5778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="501260000" />
+    <option name="totallyTimeSpent" value="502322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -827,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MortgageSearchComp.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1081">
-          <caret line="167" column="38" selection-start-line="167" selection-start-column="38" selection-end-line="167" selection-end-column="38" />
+        <state relative-caret-position="549">
+          <caret line="846" column="35" lean-forward="true" selection-start-line="846" selection-start-column="35" selection-end-line="846" selection-end-column="35" />
           <folding>
             <element signature="n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#v-col#2;n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
@@ -836,7 +835,6 @@
             <element signature="n#v-col#4;n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#v-row#0;n#template#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#v-col#2;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#v-col#3;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>

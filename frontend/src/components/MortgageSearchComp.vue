@@ -670,62 +670,62 @@
                     </v-list-item>
                   </v-col>
                   <v-col cols="12" sm="6" md="3" lg="3" align="left">
-                    <v-list-item>
-                      <v-list-item-content class="grey--text text--darken-1">
-                        <template v-if="monthlyPayment(mort)">
-                          <div>
-                            <div
-                              v-for="(pay, k, i) in monthlyPayment(mort)"
-                              :key="i"
-                            >
-                              <template v-if="k === 'monthly_pay'">
-                                <span>Ежемесячный платеж</span>
-                                <p
-                                  class="grey--text text--darken-1 headline font-weight-black"
-                                >
-                                  {{ pay | numCredit | toRUB }}/мес.
-                                </p>
-                              </template>
-                              <template
-                                v-if="k === 'preference_pay' && pay !== 'NaN'"
-                              >
-                                <span>С преференцией</span>
-                                <p
-                                  class="grey--text text--darken-1 headline font-weight-black"
-                                >
-                                  {{ pay | numCredit | toRUB }}/мес.
-                                </p>
-                              </template>
-                              <template
-                                v-if="k === 'salary_pay' && pay !== 'NaN'"
-                              >
-                                <span>Для зарплатников</span>
-                                <p
-                                  class="grey--text text--darken-1 headline font-weight-black"
-                                >
-                                  {{ pay | numCredit | toRUB }}/мес.
-                                </p>
-                              </template>
-                            </div>
-                          </div>
-                        </template>
-                        <template v-else>
-                          <v-alert text color="grey lighten-1">
-                            <v-list-item-content>
-                              <p class="body-2">
-                                Для расчёта ежемесечного платежа введите
-                                подходящие для этой программы значения.
-                              </p>
-                              <p class="caption mb-1">
-                                - Стоимость недвижимости
-                              </p>
-                              <p class="caption mb-1">- Первоначальный взнос</p>
-                              <p class="caption mb-1">- Срок</p>
-                            </v-list-item-content>
-                          </v-alert>
-                        </template>
-                      </v-list-item-content>
-                    </v-list-item>
+<!--                    <v-list-item>-->
+<!--                      <v-list-item-content class="grey&#45;&#45;text text&#45;&#45;darken-1">-->
+<!--                        <template v-if="monthlyPayment(mort)">-->
+<!--                          <div>-->
+<!--                            <div-->
+<!--                              v-for="(pay, k, i) in monthlyPayment(mort)"-->
+<!--                              :key="i"-->
+<!--                            >-->
+<!--                              <template v-if="k === 'monthly_pay'">-->
+<!--                                <span>Ежемесячный платеж</span>-->
+<!--                                <p-->
+<!--                                  class="grey&#45;&#45;text text&#45;&#45;darken-1 headline font-weight-black"-->
+<!--                                >-->
+<!--                                  {{ pay | numCredit | toRUB }}/мес.-->
+<!--                                </p>-->
+<!--                              </template>-->
+<!--                              <template-->
+<!--                                v-if="k === 'preference_pay' && pay !== 'NaN'"-->
+<!--                              >-->
+<!--                                <span>С преференцией</span>-->
+<!--                                <p-->
+<!--                                  class="grey&#45;&#45;text text&#45;&#45;darken-1 headline font-weight-black"-->
+<!--                                >-->
+<!--                                  {{ pay | numCredit | toRUB }}/мес.-->
+<!--                                </p>-->
+<!--                              </template>-->
+<!--                              <template-->
+<!--                                v-if="k === 'salary_pay' && pay !== 'NaN'"-->
+<!--                              >-->
+<!--                                <span>Для зарплатников</span>-->
+<!--                                <p-->
+<!--                                  class="grey&#45;&#45;text text&#45;&#45;darken-1 headline font-weight-black"-->
+<!--                                >-->
+<!--                                  {{ pay | numCredit | toRUB }}/мес.-->
+<!--                                </p>-->
+<!--                              </template>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </template>-->
+<!--                        <template v-else>-->
+<!--                          <v-alert text color="grey lighten-1">-->
+<!--                            <v-list-item-content>-->
+<!--                              <p class="body-2">-->
+<!--                                Для расчёта ежемесечного платежа введите-->
+<!--                                подходящие для этой программы значения.-->
+<!--                              </p>-->
+<!--                              <p class="caption mb-1">-->
+<!--                                - Стоимость недвижимости-->
+<!--                              </p>-->
+<!--                              <p class="caption mb-1">- Первоначальный взнос</p>-->
+<!--                              <p class="caption mb-1">- Срок</p>-->
+<!--                            </v-list-item-content>-->
+<!--                          </v-alert>-->
+<!--                        </template>-->
+<!--                      </v-list-item-content>-->
+<!--                    </v-list-item>-->
                   </v-col>
                 </v-row>
               </div>
@@ -848,65 +848,65 @@ export default {
         this.none();
       }
     },
-    funcMontPay(rate, pref = 0) {
-      let monthly_procent = (rate - pref) / 100 / 12;
-      let tmp = Math.pow(1 + monthly_procent, this.filters.time_credit * 12);
-      let monthlyPay =
-        (Number(this.filters.property_value.replace(/\s+/g, "")) -
-          Number(this.num_first_payment.replace(/\s+/g, ""))) *
-        monthly_procent *
-        (tmp / (tmp - 1));
-
-      return monthlyPay;
-    },
-    monthlyPayment(mort) {
-      // console.log(mort);
-      // https://mortgage-calculator.ru/%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0-%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%B8%D0%BF%D0%BE%D1%82%D0%B5%D0%BA%D0%B8
-      if (
-        // проверка на "!== undefined" должна стоять выше чем ".replace", а то будет ошибка !!!
-        this.filters.property_value !== undefined &&
-        this.filters.time_credit !== undefined &&
-        this.num_first_payment !== "" &&
-        this.filters.property_value !== "" &&
-        this.filters.time_credit !== "" &&
-        Number(this.num_first_payment.replace(/\s+/g, "")) <=
-          Number(this.filters.property_value.replace(/\s+/g, "")) &&
-        this.filters.first_payment >= mort.first_payment &&
-        Number(this.filters.property_value.replace(/\s+/g, "")) >=
-          mort.min_sum_credit &&
-        Number(this.filters.property_value.replace(/\s+/g, "")) <=
-          mort.max_sum_credit &&
-        this.filters.time_credit >= mort.min_time_credit &&
-        this.filters.time_credit <= mort.max_time_credit
-      ) {
-        // console.log(this.filters.time_credit);
-        // let monthly_procent = mort.rate / 100 / 12;
-        // let tmp = Math.pow(1 + monthly_procent, this.filters.time_credit * 12);
-        // let monthlyPay =
-        //   (Number(this.filters.property_value.replace(/\s+/g, "")) -
-        //     Number(this.num_first_payment.replace(/\s+/g, ""))) *
-        //   monthly_procent *
-        //   (tmp / (tmp - 1));
-
-        let data = new Object();
-        data["monthly_pay"] = this.funcMontPay(mort.rate).toFixed(2);
-        if (mort.bank.preference_value !== null) {
-          data["preference_pay"] = this.funcMontPay(
-            mort.rate,
-            mort.bank.preference_value
-          ).toFixed(2);
-        }
-        data["salary_pay"] = this.funcMontPay(mort.rate_salary).toFixed(2);
-        // console.log(data);
-        return data;
-        // return monthlyPay.toFixed(2);
-      } else if (
-        this.num_first_payment === "" ||
-        this.filters.property_value === ""
-      ) {
-        return false;
-      }
-    },
+    // funcMontPay(rate, pref = 0) {
+    //   let monthly_procent = (rate - pref) / 100 / 12;
+    //   let tmp = Math.pow(1 + monthly_procent, this.filters.time_credit * 12);
+    //   let monthlyPay =
+    //     (Number(this.filters.property_value.replace(/\s+/g, "")) -
+    //       Number(this.num_first_payment.replace(/\s+/g, ""))) *
+    //     monthly_procent *
+    //     (tmp / (tmp - 1));
+    //
+    //   return monthlyPay;
+    // },
+    // monthlyPayment(mort) {
+    //   // console.log(mort);
+    //   // https://mortgage-calculator.ru/%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0-%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%B8%D0%BF%D0%BE%D1%82%D0%B5%D0%BA%D0%B8
+    //   if (
+    //     // проверка на "!== undefined" должна стоять выше чем ".replace", а то будет ошибка !!!
+    //     this.filters.property_value !== undefined &&
+    //     this.filters.time_credit !== undefined &&
+    //     this.num_first_payment !== "" &&
+    //     this.filters.property_value !== "" &&
+    //     this.filters.time_credit !== "" &&
+    //     Number(this.num_first_payment.replace(/\s+/g, "")) <=
+    //       Number(this.filters.property_value.replace(/\s+/g, "")) &&
+    //     this.filters.first_payment >= mort.first_payment &&
+    //     Number(this.filters.property_value.replace(/\s+/g, "")) >=
+    //       mort.min_sum_credit &&
+    //     Number(this.filters.property_value.replace(/\s+/g, "")) <=
+    //       mort.max_sum_credit &&
+    //     this.filters.time_credit >= mort.min_time_credit &&
+    //     this.filters.time_credit <= mort.max_time_credit
+    //   ) {
+    //     // console.log(this.filters.time_credit);
+    //     // let monthly_procent = mort.rate / 100 / 12;
+    //     // let tmp = Math.pow(1 + monthly_procent, this.filters.time_credit * 12);
+    //     // let monthlyPay =
+    //     //   (Number(this.filters.property_value.replace(/\s+/g, "")) -
+    //     //     Number(this.num_first_payment.replace(/\s+/g, ""))) *
+    //     //   monthly_procent *
+    //     //   (tmp / (tmp - 1));
+    //
+    //     let data = new Object();
+    //     data["monthly_pay"] = this.funcMontPay(mort.rate).toFixed(2);
+    //     if (mort.bank.preference_value !== null) {
+    //       data["preference_pay"] = this.funcMontPay(
+    //         mort.rate,
+    //         mort.bank.preference_value
+    //       ).toFixed(2);
+    //     }
+    //     data["salary_pay"] = this.funcMontPay(mort.rate_salary).toFixed(2);
+    //     console.log(data);
+    //     return data;
+    //     // return monthlyPay.toFixed(2);
+    //   } else if (
+    //     this.num_first_payment === "" ||
+    //     this.filters.property_value === ""
+    //   ) {
+    //     return false;
+    //   }
+    // },
     thousandSeparator(newValue) {
       let v = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
       // console.log("thousandSeparator => " + v);
