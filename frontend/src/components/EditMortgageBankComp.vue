@@ -23,6 +23,12 @@
       >
     </template>
 
+    <template v-slot:item.link_docs="{ item }">
+      <v-icon v-if="item.link_docs" color="green darken-2"
+      >mdi-checkbox-marked-circle</v-icon
+      >
+    </template>
+
     <template v-slot:top>
       <v-toolbar flat color="white">
         <v-toolbar-title>Банки</v-toolbar-title>
@@ -117,10 +123,18 @@
                     </v-col>
                     <v-col cols="12" sm="12" md="12">
                       <v-textarea
-                        v-model="editedItem.preference_comment"
-                        label="Комментарий к преференции"
-                        placeholder="Комментарий к преференции"
+                        v-model="editedItem.contacts"
+                        label="Контакты"
+                        placeholder="Контакты"
                         outlined
+                      ></v-textarea>
+                    </v-col>
+                    <v-col cols="12" sm="12" md="12">
+                      <v-textarea
+                              v-model="editedItem.link_docs"
+                              label="Ссылка на документы"
+                              outlined
+                              rows="1"
                       ></v-textarea>
                     </v-col>
                   </v-row>
@@ -226,14 +240,15 @@ export default {
         sortable: false,
         value: "bank_logo"
       },
-      { text: "Название банка", width: "18%", value: "bank_name" },
-      { text: "Преференция", width: "10%", value: "preference_is_active" },
-      { text: "Процент", width: "10%", value: "preference_value" },
+      { text: "Название банка", width: "14%", value: "bank_name" },
+      { text: "Преференция", width: "8%", value: "preference_is_active" },
+      { text: "Процент", width: "8%", value: "preference_value" },
       {
-        text: "Комментарий к преференции",
+        text: "Контакты",
         width: "40%",
-        value: "preference_comment"
+        value: "contacts"
       },
+      { text: "Ссылка", width: "8%", value: "link_docs" },
       { text: "Действия", width: "10%", value: "action", sortable: false }
     ],
     listBanks: [],
@@ -243,14 +258,16 @@ export default {
       bank_name: null,
       preference_is_active: null,
       preference_value: null,
-      preference_comment: null
+      contacts: null,
+      link_docs: null
     },
     defaultItem: {
       bank_logo: null,
       bank_name: null,
       preference_is_active: null,
       preference_value: null,
-      preference_comment: null
+      contacts: null,
+      link_docs: null
     },
     currentImageFile: "",
     currentImageLink: "",
@@ -467,12 +484,22 @@ export default {
       }
 
       if (
-        this.editedItem.preference_comment ||
-        this.editedItem.preference_comment === ""
+        this.editedItem.contacts ||
+        this.editedItem.contacts === ""
       ) {
         formData.append(
-          "preference_comment",
-          this.editedItem.preference_comment
+          "contacts",
+          this.editedItem.contacts
+        );
+      }
+
+      if (
+        this.editedItem.link_docs ||
+        this.editedItem.link_docs === ""
+      ) {
+        formData.append(
+          "link_docs",
+          this.editedItem.link_docs
         );
       }
 

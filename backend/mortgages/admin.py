@@ -6,7 +6,7 @@ class BanksAdmin(admin.ModelAdmin):
     class Meta:
         model = Banks
 
-    list_display = ('bank_name', 'preference_is_active', 'preference_value', 'preference_comment')
+    list_display = ('bank_name', 'preference_is_active', 'preference_value', 'contacts', 'link_docs')
     ordering = ['bank_name']
 
 

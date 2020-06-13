@@ -69,13 +69,13 @@
                       min="0"
                       dense
                     ></v-text-field>
-                        <v-btn
-                          icon
-                          color="primary"
-                          @click="changeFilterOnSumCredit"
-                        >
-                          <v-icon>mdi-cached</v-icon>
-                        </v-btn>
+                    <v-btn
+                      icon
+                      color="primary"
+                      @click="changeFilterOnSumCredit"
+                    >
+                      <v-icon>mdi-cached</v-icon>
+                    </v-btn>
                   </div>
                 </v-col>
                 <v-col cols="12" md="2">
@@ -101,13 +101,13 @@
                       dense
                     ></v-text-field>
 
-                        <v-btn
-                          icon
-                          color="primary"
-                          @click="changeFilterOnSumCredit"
-                        >
-                          <v-icon>mdi-cached</v-icon>
-                        </v-btn>
+                    <v-btn
+                      icon
+                      color="primary"
+                      @click="changeFilterOnSumCredit"
+                    >
+                      <v-icon>mdi-cached</v-icon>
+                    </v-btn>
                   </div>
                 </v-col>
                 <v-col cols="12" md="2">
@@ -713,20 +713,39 @@
                           >
                           {{ mort.proof_of_income_document }}
                         </p>
-                        <p class="caption mb-1 pre-formatted">
-                          <span class="font-weight-black before-span-text"
-                            >Дополнительная информация:</span
-                          >
+                        <div class="caption mb-1 pre-formatted">
+                          <div class="font-weight-black before-span-text">
+                            Дополнительная информация:
+                          </div>
                           {{ mort.add_info }}
-                        </p>
+                        </div>
+
+                        <template v-if="mort.bank.link_docs">
+                          <v-btn
+                            small
+                            :href="mort.bank.link_docs"
+                            target="_blank"
+                            class="mt-3"
+                            outlined
+                            color="grey"
+                            >Ссылка на документы
+                          </v-btn>
+                        </template>
                       </v-list-item-content>
                     </v-list-item>
                   </v-col>
                   <v-col cols="12" sm="6" md="3" lg="3" align="left">
                     <v-list-item>
                       <v-list-item-content class="grey--text text--darken-1">
+                        <div class="caption mb-1 pre-formatted">
+                          <div class="font-weight-black before-span-text">
+                            Контакты:
+                          </div>
+                          {{ mort.bank.contacts }}
+                        </div>
+
                         <template v-if="monthlyPayment(mort)">
-                          <div>
+                          <div class="mt-3">
                             <div
                               v-for="(pay, k, i) in monthlyPayment(mort)"
                               :key="i"
@@ -763,14 +782,13 @@
                           </div>
                         </template>
                         <template v-else>
-                          <v-alert text color="grey lighten-1">
+                          <v-alert text color="grey lighten-1" class="mt-3">
                             <v-list-item-content>
                               <p class="body-2">
-                                Для расчёта ежемесечного платежа введите
-                                подходящие для этой программы значения.
+                                Для расчёта ежемесечного платежа введите:
                               </p>
                               <p class="caption mb-1">
-                                - Стоимость недвижимости
+                                - Стоимость недвижимости / сумма кредита
                               </p>
                               <p class="caption mb-1">- Первоначальный взнос</p>
                               <p class="caption mb-1">- Срок</p>
@@ -879,7 +897,6 @@ export default {
       return this.filters;
     },
     filterMortgages(pageDef) {
-
       // сдесь проверяем если в поле "стоимость недвижимости" что-то внесли, то и
       // "первоночальный взнос" необходимо заполнить
       if (this.filters.property_value && !this.filters.first_payment) {
@@ -938,7 +955,7 @@ export default {
         let monthly_procent = (rate - pref) / 100 / 12;
         let tmp = Math.pow(1 + monthly_procent, this.filters.time_credit * 12);
         let monthlyPay =
-          (Number(this.filters.sum_credit.replace(/\s+/g, ""))) *
+          Number(this.filters.sum_credit.replace(/\s+/g, "")) *
           monthly_procent *
           (tmp / (tmp - 1));
 
@@ -962,20 +979,17 @@ export default {
           this.filters.property_value !== "" &&
           this.filters.time_credit !== "" &&
           Number(this.num_first_payment.replace(/\s+/g, "")) <=
-          Number(this.filters.property_value.replace(/\s+/g, "")) &&
+            Number(this.filters.property_value.replace(/\s+/g, "")) &&
           this.filters.first_payment >= mort.first_payment &&
-
-          (Number(this.filters.property_value.replace(/\s+/g, "")) -
-            Number(this.num_first_payment.replace(/\s+/g, ""))) >=
-          mort.min_sum_credit &&
-          (Number(this.filters.property_value.replace(/\s+/g, "")) -
-            Number(this.num_first_payment.replace(/\s+/g, ""))) <=
-          mort.max_sum_credit &&
-
+          Number(this.filters.property_value.replace(/\s+/g, "")) -
+            Number(this.num_first_payment.replace(/\s+/g, "")) >=
+            mort.min_sum_credit &&
+          Number(this.filters.property_value.replace(/\s+/g, "")) -
+            Number(this.num_first_payment.replace(/\s+/g, "")) <=
+            mort.max_sum_credit &&
           this.filters.time_credit >= mort.min_time_credit &&
           this.filters.time_credit <= mort.max_time_credit
         ) {
-
           let data = new Object();
           // 0 - property_value, 1 -sum_credit
           data["monthly_pay"] = this.funcMontPay(0, mort.rate).toFixed(2);
@@ -1006,14 +1020,12 @@ export default {
           this.filters.sum_credit !== "" &&
           this.filters.time_credit !== "" &&
           Number(this.num_first_payment.replace(/\s+/g, "")) <=
-          Number(this.filters.sum_credit.replace(/\s+/g, "")) &&
+            Number(this.filters.sum_credit.replace(/\s+/g, "")) &&
           this.filters.first_payment >= mort.first_payment &&
-
-          (Number(this.filters.sum_credit.replace(/\s+/g, ""))) >=
-          mort.min_sum_credit &&
-          (Number(this.filters.sum_credit.replace(/\s+/g, ""))) <=
-          mort.max_sum_credit &&
-
+          Number(this.filters.sum_credit.replace(/\s+/g, "")) >=
+            mort.min_sum_credit &&
+          Number(this.filters.sum_credit.replace(/\s+/g, "")) <=
+            mort.max_sum_credit &&
           this.filters.time_credit >= mort.min_time_credit &&
           this.filters.time_credit <= mort.max_time_credit
         ) {

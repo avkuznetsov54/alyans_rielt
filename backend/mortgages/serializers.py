@@ -11,7 +11,8 @@ class TargetCreditsSerializer(serializers.ModelSerializer):
 class BanksSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banks
-        fields = ('id', 'bank_name', 'bank_logo', 'preference_is_active', 'preference_value', 'preference_comment')
+        fields = ('id', 'bank_name', 'bank_logo', 'preference_is_active',
+                  'preference_value', 'preference_comment', 'contacts', 'link_docs')
 
 
 class MortgageProgramsSerializer(serializers.ModelSerializer):
