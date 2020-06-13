@@ -43,6 +43,10 @@ class MortgageProgramsView(generics.ListAPIView):
                 k = 'programs_bank__bank_name' + '__in'
                 v = v.split(',')
                 params.update({k: v})
+            if k == 'preference_is_active':
+                k = 'programs_bank__preference_is_active'
+                if v == 'true':
+                    params.update({k: True})
             if k == 'names_target_credits':
                 k = 'programs_target__target_name' + '__in'
                 v = v.split(',')
@@ -93,6 +97,8 @@ class MortgageProgramsView(generics.ListAPIView):
                 if v == 'true':
                     params.update({k: True})
             if k == 'express_issue':
+                params.update({k: v})
+            if k == 'redevelopment':
                 params.update({k: v})
             if k == 'wetpoint_transfer':
                 params.update({k: v})

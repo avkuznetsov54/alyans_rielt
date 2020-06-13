@@ -204,20 +204,29 @@
                   ></v-checkbox>
                 </v-col>
 
-                <v-col cols="12" md="4">
+                <v-col cols="12" md="2">
                   <v-checkbox
-                    dense
-                    v-model="filters.spouse_exclusion_is_active"
-                    label="Исключение супруги(а) согласием"
+                          dense
+                          v-model="filters.redevelopment"
+                          value="yes"
+                          label="Перепланировка"
                   ></v-checkbox>
                 </v-col>
 
                 <v-col cols="12" md="2">
                   <v-checkbox
+                          dense
+                          v-model="filters.express_issue"
+                          value="yes"
+                          label="Экспресс выдача"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="4">
+                  <v-checkbox
                     dense
-                    v-model="filters.express_issue"
-                    value="yes"
-                    label="Экспресс выдача"
+                    v-model="filters.spouse_exclusion_is_active"
+                    label="Исключение супруги(а) согласием"
                   ></v-checkbox>
                 </v-col>
 
@@ -236,6 +245,14 @@
                     v-model="filters.is_rate_salary"
                     value="yes"
                     label="Программы для зарплатников"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="2">
+                  <v-checkbox
+                    dense
+                    v-model="filters.preference_is_active"
+                    label="Программы с преференциями"
                   ></v-checkbox>
                 </v-col>
               </v-row>
@@ -748,7 +765,7 @@
                           <v-alert text color="grey lighten-1" class="mt-3">
                           <div class="mt-3">
                             <div
-                              v-for="(pay, k, i) in monthlyPayment(mort)"
+                                v-for="(pay, k, i) in monthlyPayment(mort)"
                               :key="i"
                             >
                               <template v-if="k === 'monthly_pay'">
@@ -1197,7 +1214,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
 /* Убираем анимацию у v-expansion-panel (ТОРМОЗИТ сильно!)*/
 .no-transition {
   transition: none !important;
@@ -1242,5 +1260,8 @@ export default {
 }
 .v-alert {
   padding: 0 14px;
+}
+.v-input {
+  margin-top: 0 !important;
 }
 </style>

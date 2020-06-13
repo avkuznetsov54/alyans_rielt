@@ -45,10 +45,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MortgageSearchComp.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="786" column="74" selection-start-line="786" selection-start-column="74" selection-end-line="786" selection-end-column="74" />
+            <state relative-caret-position="429">
+              <caret line="222" column="24" selection-start-line="222" selection-start-column="24" selection-end-line="222" selection-end-column="24" />
               <folding>
                 <element signature="n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#v-col#3;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -114,8 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>удад</find>
-      <find>listBanks</find>
       <find>submitFile</find>
       <find>на срок</find>
       <find>listTargetCredits</find>
@@ -144,6 +145,8 @@
       <find>для ра</find>
       <find>toRUB</find>
       <find>Ежемесячный платеж</find>
+      <find>is_rate_salary</find>
+      <find>checkbox-text</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -477,12 +480,12 @@
       <workItem from="1591180045314" duration="3002000" />
       <workItem from="1591201361536" duration="15783000" />
       <workItem from="1591251187359" duration="205000" />
-      <workItem from="1591847898743" duration="30904000" />
+      <workItem from="1591847898743" duration="35179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="527448000" />
+    <option name="totallyTimeSpent" value="531723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -493,7 +496,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30306122" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30612245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -850,10 +853,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MortgageSearchComp.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="786" column="74" selection-start-line="786" selection-start-column="74" selection-end-line="786" selection-end-column="74" />
+        <state relative-caret-position="429">
+          <caret line="222" column="24" selection-start-line="222" selection-start-column="24" selection-end-line="222" selection-end-column="24" />
           <folding>
             <element signature="n#v-row#0;n#v-container#0;n#v-form#0;n#v-card-text#0;n#v-card#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#v-col#3;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>
