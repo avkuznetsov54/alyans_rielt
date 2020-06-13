@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac934dc0-24f1-43a8-ab1f-ea4de40e22ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_banks.json" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages_banks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_mortgageprograms.json" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages_mortgageprograms.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_mortgageprograms_programs_target.json" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages_mortgageprograms_programs_target.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +64,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="1020">
               <caret line="60" column="40" lean-forward="true" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
@@ -340,12 +335,12 @@
       <workItem from="1591179672270" duration="1015000" />
       <workItem from="1591201329151" duration="3961000" />
       <workItem from="1591251171708" duration="291000" />
-      <workItem from="1591847914548" duration="10681000" />
+      <workItem from="1591847914548" duration="10944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249179000" />
+    <option name="totallyTimeSpent" value="249442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -745,7 +740,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="1020">
           <caret line="60" column="40" lean-forward="true" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
           <folding>
             <element signature="e#308#317#0" expanded="true" />
