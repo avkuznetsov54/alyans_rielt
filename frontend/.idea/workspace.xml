@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de76945f-c3ae-4fc8-a318-f47e039381c5" name="Default Changelist" comment="" />
+    <list default="true" id="de76945f-c3ae-4fc8-a318-f47e039381c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/mortgages_banks.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/mortgages_banks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/mortgages_mortgageprograms.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/mortgages_mortgageprograms.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/mortgages_mortgageprograms_programs_target.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/mortgages_mortgageprograms_programs_target.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api/axios-base.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -42,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MortgageSearchComp.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="429">
@@ -61,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/EditMortgageProgramComp.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1459">
-              <caret line="495" column="30" lean-forward="true" selection-start-line="495" selection-start-column="30" selection-end-line="495" selection-end-column="38" />
+              <caret line="495" column="30" selection-start-line="495" selection-start-column="30" selection-end-line="495" selection-end-column="38" />
               <folding>
                 <element signature="n#v-col#0;n#v-row#0;n#v-container#0;n#v-card-text#0;n#v-card#0;n#form#0;n#v-dialog#0;n#div#0;n#v-col#2;n#v-row#0;n#v-container#0;n#v-card-title#0;n#v-card#0;n#template#0;n#!!top" />
                 <element signature="n#v-col#1;n#v-row#0;n#v-container#0;n#v-card-text#0;n#v-card#0;n#form#0;n#v-dialog#0;n#div#0;n#v-col#2;n#v-row#0;n#v-container#0;n#v-card-title#0;n#v-card#0;n#template#0;n#!!top" />
@@ -101,6 +108,15 @@
                 <element signature="n#template#0;n#v-data-table#0;n#template#0;n#!!top" />
                 <element signature="n#style#0;n#input#0;n#v-col#0;n#v-row#0;n#v-container#0;n#v-card-text#0;n#v-card#0;n#form#0;n#v-dialog#0;n#v-toolbar#0;n#template#2;n#v-data-table#0;n#template#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -205,10 +221,10 @@
         <option value="$PROJECT_DIR$/src/router/index.js" />
         <option value="$PROJECT_DIR$/src/components/layouts/MainLayout.vue" />
         <option value="$PROJECT_DIR$/src/store/modules/mortgages/mortgages.js" />
-        <option value="$PROJECT_DIR$/src/api/axios-base.js" />
         <option value="$PROJECT_DIR$/src/components/EditMortgageProgramComp.vue" />
         <option value="$PROJECT_DIR$/src/components/EditMortgageBankComp.vue" />
         <option value="$PROJECT_DIR$/src/components/MortgageSearchComp.vue" />
+        <option value="$PROJECT_DIR$/src/api/axios-base.js" />
       </list>
     </option>
   </component>
@@ -235,110 +251,6 @@
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="cars" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="mods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="mortgages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="user_info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="mortgages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="user_info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -480,23 +392,23 @@
       <workItem from="1591180045314" duration="3002000" />
       <workItem from="1591201361536" duration="15783000" />
       <workItem from="1591251187359" duration="205000" />
-      <workItem from="1591847898743" duration="35179000" />
+      <workItem from="1591847898743" duration="35785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="531723000" />
+    <option name="totallyTimeSpent" value="532329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.1910867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.1910867" />
       <window_info id="Structure" order="1" sideWeight="0.50102043" side_tool="true" weight="0.1910867" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30612245" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30612245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -505,7 +417,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.23673469" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23673469" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -579,13 +491,6 @@
           <folding>
             <element signature="e#83#105#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -764,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/axios-base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/modules/mortgages/mortgages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4451">
@@ -812,7 +710,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/EditMortgageProgramComp.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1459">
-          <caret line="495" column="30" lean-forward="true" selection-start-line="495" selection-start-column="30" selection-end-line="495" selection-end-column="38" />
+          <caret line="495" column="30" selection-start-line="495" selection-start-column="30" selection-end-line="495" selection-end-column="38" />
           <folding>
             <element signature="n#v-col#0;n#v-row#0;n#v-container#0;n#v-card-text#0;n#v-card#0;n#form#0;n#v-dialog#0;n#div#0;n#v-col#2;n#v-row#0;n#v-container#0;n#v-card-title#0;n#v-card#0;n#template#0;n#!!top" />
             <element signature="n#v-col#1;n#v-row#0;n#v-container#0;n#v-card-text#0;n#v-card#0;n#form#0;n#v-dialog#0;n#div#0;n#v-col#2;n#v-row#0;n#v-container#0;n#v-card-title#0;n#v-card#0;n#template#0;n#!!top" />
@@ -861,6 +759,20 @@
             <element signature="n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
             <element signature="n#v-col#3;n#v-row#0;n#div#0;n#v-expansion-panel-content#0;n#template#0;n#v-expansion-panel#0;n#v-expansion-panels#0;n#template#1;n#div#0;n#template#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/axios-base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
         </state>
       </provider>
     </entry>
