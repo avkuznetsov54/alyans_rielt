@@ -713,7 +713,7 @@
                           >
                           {{ mort.proof_of_income_document }}
                         </p>
-                        <p class="caption mb-1">
+                        <p class="caption mb-1 pre-formatted">
                           <span class="font-weight-black before-span-text"
                             >Дополнительная информация:</span
                           >
@@ -1123,6 +1123,9 @@ export default {
     },
     toRUB(value) {
       return `${value.toLocaleString()} ₽`;
+    },
+    toEnter(value) {
+      return value.replace(/\n/g, "<br/>");
     }
   },
   watch: {
@@ -1219,5 +1222,8 @@ export default {
 }
 .collom-flex {
   display: flex;
+}
+.pre-formatted {
+  white-space: pre-line;
 }
 </style>
