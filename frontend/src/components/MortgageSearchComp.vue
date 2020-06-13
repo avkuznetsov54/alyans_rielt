@@ -745,15 +745,16 @@
                         </div>
 
                         <template v-if="monthlyPayment(mort)">
+                          <v-alert text color="grey lighten-1" class="mt-3">
                           <div class="mt-3">
                             <div
                               v-for="(pay, k, i) in monthlyPayment(mort)"
                               :key="i"
                             >
                               <template v-if="k === 'monthly_pay'">
-                                <span>Ежемесячный платеж</span>
+                                <span class="body-2 grey--text text--darken-2">Ежемесячный платеж</span>
                                 <p
-                                  class="grey--text text--darken-1 headline font-weight-black"
+                                  class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
                                 >
                                   {{ pay | numCredit | toRUB }}/мес.
                                 </p>
@@ -761,9 +762,9 @@
                               <template
                                 v-if="k === 'preference_pay' && pay !== 'NaN'"
                               >
-                                <span>С преференцией</span>
+                                <span class="body-2 grey--text text--darken-2">С преференцией</span>
                                 <p
-                                  class="grey--text text--darken-1 headline font-weight-black"
+                                  class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
                                 >
                                   {{ pay | numCredit | toRUB }}/мес.
                                 </p>
@@ -771,20 +772,21 @@
                               <template
                                 v-if="k === 'salary_pay' && pay !== 'NaN'"
                               >
-                                <span>Для зарплатников</span>
+                                <span class="body-2 grey--text text--darken-2">Для зарплатников</span>
                                 <p
-                                  class="grey--text text--darken-1 headline font-weight-black"
+                                  class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
                                 >
                                   {{ pay | numCredit | toRUB }}/мес.
                                 </p>
                               </template>
                             </div>
                           </div>
+                          </v-alert>
                         </template>
                         <template v-else>
                           <v-alert text color="grey lighten-1" class="mt-3">
                             <v-list-item-content>
-                              <p class="body-2">
+                              <p class="body-2 ">
                                 Для расчёта ежемесечного платежа введите:
                               </p>
                               <p class="caption mb-1">
@@ -1237,5 +1239,8 @@ export default {
 }
 .pre-formatted {
   white-space: pre-line;
+}
+.v-alert {
+  padding: 0 14px;
 }
 </style>
