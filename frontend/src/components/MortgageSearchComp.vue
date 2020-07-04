@@ -81,7 +81,7 @@
                 <v-col cols="12" md="2">
                   <v-text-field
                     v-model="num_first_payment"
-                    label="Первоначальный взнос, руб"
+                    label="ПВ, руб"
                     placeholder="Любой"
                     :rules="nfpRules"
                     min="0"

@@ -48,6 +48,17 @@
                             </div>
                           </v-col>
                         </v-row>
+                        <v-row justify="end">
+                          <v-col cols="12" sm="6">
+                            <div class="float-right">
+                              <v-checkbox
+                                v-model="editedItem.is_use_preference_bank"
+                                label="Применять преференцию банка к программе"
+                                color="primary"
+                              ></v-checkbox>
+                            </div>
+                          </v-col>
+                        </v-row>
                       </v-container>
                     </v-card-title>
 
@@ -1090,6 +1101,9 @@ export default {
 
       let formData = new Object();
       formData["is_visible"] = this.editedItem.is_visible;
+      formData[
+        "is_use_preference_bank"
+      ] = this.editedItem.is_use_preference_bank;
       formData["programs_bank"] = this.editedItem.programs_bank;
       formData["programs_name"] = this.editedItem.programs_name;
       formData["rate"] = this.editedItem.rate;
@@ -1261,5 +1275,8 @@ export default {
 <style scoped>
 .link_w_u {
   text-decoration: none;
+}
+.v-input--selection-controls {
+  margin-top: 0 !important;
 }
 </style>

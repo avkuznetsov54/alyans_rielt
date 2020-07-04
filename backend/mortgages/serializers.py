@@ -31,6 +31,7 @@ class MortgageProgramsSerializer(serializers.ModelSerializer):
         model = MortgagePrograms
         fields = ('id',
                   'is_visible',
+                  'is_use_preference_bank',
                   'programs_bank',
                   'programs_target',
                   'programs_name',
