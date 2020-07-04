@@ -334,7 +334,13 @@
                         contain
                       ></v-img>
                     </div>
-                    <div v-if="mort.bank.preference_is_active">
+
+                    <div
+                      v-if="
+                        mort.bank.preference_is_active &&
+                          mort.is_use_preference_bank
+                      "
+                    >
                       <v-chip
                         small
                         color="cyan"
@@ -347,6 +353,7 @@
                         >
                       </v-chip>
                     </div>
+
                   </v-col>
                   <v-col cols="12" sm="9" md="3" lg="2">
                     <div class="mt-2">
@@ -763,41 +770,45 @@
 
                         <template v-if="monthlyPayment(mort)">
                           <v-alert text color="grey lighten-1" class="mt-3">
-                          <div class="mt-3">
-                            <div
+                            <div class="mt-3">
+                              <div
                                 v-for="(pay, k, i) in monthlyPayment(mort)"
                               :key="i"
-                            >
-                              <template v-if="k === 'monthly_pay'">
-                                <span class="body-2 grey--text text--darken-2">Ежемесячный платеж</span>
-                                <p
-                                  class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
-                                >
-                                  {{ pay | numCredit | toRUB }}/мес.
-                                </p>
-                              </template>
-                              <template
-                                v-if="k === 'preference_pay' && pay !== 'NaN'"
                               >
-                                <span class="body-2 grey--text text--darken-2">С преференцией</span>
-                                <p
-                                  class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
+                                <template v-if="k === 'monthly_pay'">
+                                  <span class="body-2 grey--text text--darken-2"
+                                    >Ежемесячный платеж</span
+                                  >
+                                  <p
+                                    class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
+                                  >
+                                    {{ pay | numCredit | toRUB }}/мес.
+                                  </p>
+                                </template>
+                                <template
+                                  v-if="k === 'preference_pay' && pay !== 'NaN' && mort.is_use_preference_bank"
                                 >
-                                  {{ pay | numCredit | toRUB }}/мес.
-                                </p>
-                              </template>
-                              <template
-                                v-if="k === 'salary_pay' && pay !== 'NaN'"
-                              >
-                                <span class="body-2 grey--text text--darken-2">Для зарплатников</span>
-                                <p
-                                  class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
+                                  <span class="body-2 grey--text text--darken-2">
+                                    С преференцией
+                                  </span>
+                                  <p
+                                    class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
+                                  >
+                                    {{ pay | numCredit | toRUB }}/мес.
+                                  </p>
+                                </template>
+                                <template
+                                  v-if="k === 'salary_pay' && pay !== 'NaN'"
                                 >
-                                  {{ pay | numCredit | toRUB }}/мес.
-                                </p>
-                              </template>
+                                  <span class="body-2 grey--text text--darken-2">Для зарплатников</span>
+                                  <p
+                                    class="grey--text text--darken-2 headline font-weight-black subtitle-1 mb-1"
+                                  >
+                                    {{ pay | numCredit | toRUB }}/мес.
+                                  </p>
+                                </template>
+                              </div>
                             </div>
-                          </div>
                           </v-alert>
                         </template>
                         <template v-else>

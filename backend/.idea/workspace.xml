@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac934dc0-24f1-43a8-ab1f-ea4de40e22ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_banks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_mortgageprograms.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_mortgageprograms_programs_target.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages_targetcredits.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/api/axios-base.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/api/axios-base.js" afterDir="false" />
-    </list>
+    <list default="true" id="ac934dc0-24f1-43a8-ab1f-ea4de40e22ca" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,12 +344,12 @@
       <workItem from="1591201329151" duration="3961000" />
       <workItem from="1591251171708" duration="291000" />
       <workItem from="1591847914548" duration="10947000" />
-      <workItem from="1593868907656" duration="5675000" />
+      <workItem from="1593868907656" duration="5879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255120000" />
+    <option name="totallyTimeSpent" value="255324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
