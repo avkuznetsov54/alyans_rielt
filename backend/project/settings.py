@@ -26,8 +26,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$_x4507=_d$lzep8w#9a3_e%hho)aj)3!88j9+45(=lmm-98%o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -179,13 +179,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # added simplejwt plugin as default authentication class below
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',  # убрать для proda !!!
+        # 'rest_framework.authentication.BasicAuthentication',  # убрать для proda !!!
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    # 'DEFAULT_RENDERER_CLASSES': (
-    #             'rest_framework.renderers.JSONRenderer',
-    #             # 'rest_framework.renderers.BrowsableAPIRenderer',
-    # ),
+    'DEFAULT_RENDERER_CLASSES': (
+                'rest_framework.renderers.JSONRenderer',
+                # 'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
 }
 
 SIMPLE_JWT = {

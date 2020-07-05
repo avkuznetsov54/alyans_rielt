@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac934dc0-24f1-43a8-ab1f-ea4de40e22ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/mortgages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortgages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortgages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0407_mortgages_banks.json" beforeDir="false" afterPath="$PROJECT_DIR$/dump/0407_mortgages_banks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0407_mortgages_mortgageprograms.json" beforeDir="false" afterPath="$PROJECT_DIR$/dump/0407_mortgages_mortgageprograms.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0407_mortgages_mortgageprograms_programs_target.json" beforeDir="false" afterPath="$PROJECT_DIR$/dump/0407_mortgages_mortgageprograms_programs_target.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0407_mortgages_targetcredits.json" beforeDir="false" afterPath="$PROJECT_DIR$/dump/0407_mortgages_targetcredits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
+            <state relative-caret-position="2955">
               <caret line="182" column="68" lean-forward="true" selection-start-line="182" selection-start-column="68" selection-end-line="182" selection-end-column="68" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
@@ -136,7 +136,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mortgages/permissions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
@@ -214,12 +214,12 @@
         <option value="$PROJECT_DIR$/auth_user/admin.py" />
         <option value="$PROJECT_DIR$/cars/admin.py" />
         <option value="$PROJECT_DIR$/mortgages/admin.py" />
-        <option value="$PROJECT_DIR$/project/settings.py" />
         <option value="$PROJECT_DIR$/mortgages/models.py" />
         <option value="$PROJECT_DIR$/mortgages/serializers.py" />
         <option value="$PROJECT_DIR$/mortgages/urls.py" />
         <option value="$PROJECT_DIR$/mortgages/views.py" />
         <option value="$PROJECT_DIR$/mortgages/permissions.py" />
+        <option value="$PROJECT_DIR$/project/settings.py" />
       </list>
     </option>
   </component>
@@ -264,6 +264,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dump" />
       <recent name="$PROJECT_DIR$/media/banks" />
     </key>
   </component>
@@ -370,23 +371,22 @@
       <workItem from="1591201329151" duration="3961000" />
       <workItem from="1591251171708" duration="291000" />
       <workItem from="1591847914548" duration="10947000" />
-      <workItem from="1593868907656" duration="9993000" />
+      <workItem from="1593868907656" duration="10513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259438000" />
+    <option name="totallyTimeSpent" value="259958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17338218" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.34081632" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.18163265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -395,7 +395,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" side_tool="true" weight="0.32959184" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.18163265" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2642857" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -724,16 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="182" column="68" lean-forward="true" selection-start-line="182" selection-start-column="68" selection-end-line="182" selection-end-column="68" />
-          <folding>
-            <element signature="e#308#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mortgages/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
@@ -778,6 +768,16 @@
           <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2955">
+          <caret line="182" column="68" lean-forward="true" selection-start-line="182" selection-start-column="68" selection-end-line="182" selection-end-column="68" />
+          <folding>
+            <element signature="e#308#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
