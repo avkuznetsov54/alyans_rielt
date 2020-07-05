@@ -42,14 +42,14 @@
                       ></v-text-field>
                     </v-col>
 
-                    <v-col cols="12" sm="12" md="12">
-                      <v-textarea
-                        v-model="editedItem.target_desc"
-                        label="Комментарий к цели"
-                        placeholder="Комментарий к цели"
-                        outlined
-                      ></v-textarea>
-                    </v-col>
+<!--                    <v-col cols="12" sm="12" md="12">-->
+<!--                      <v-textarea-->
+<!--                        v-model="editedItem.target_desc"-->
+<!--                        label="Комментарий к цели"-->
+<!--                        placeholder="Комментарий к цели"-->
+<!--                        outlined-->
+<!--                      ></v-textarea>-->
+<!--                    </v-col>-->
                   </v-row>
                   <v-row>
                     <v-col>

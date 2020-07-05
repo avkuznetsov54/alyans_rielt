@@ -90,6 +90,16 @@ class MortgagePrograms(models.Model):
     inclusion_children = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
                                           verbose_name='Включение детей в число собственников')
 
+    businesman = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                  verbose_name='Собсвенники бизнеса и ИП')
+    businesman_comment = models.CharField(max_length=355, db_index=True, blank=True,
+                                          verbose_name='Комментарий к Собсвенники бизнеса и ИП')
+
+    non_resident = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True,
+                                    verbose_name='Не резиденты РФ')
+    non_resident_comment = models.CharField(max_length=355, db_index=True, blank=True,
+                                            verbose_name='Комментарий к Не резиденты РФ')
+
     room = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Комната')
     room_comment = models.CharField(max_length=255, db_index=True, blank=True, verbose_name='Комментарий к Комната')
     share = models.CharField(choices=ANSWER_CHOICES, max_length=255, db_index=True, blank=True, verbose_name='Доля')

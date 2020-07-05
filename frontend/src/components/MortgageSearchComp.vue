@@ -169,8 +169,7 @@
                     dense
                   ></v-text-field>
                 </v-col>
-              </v-row>
-              <v-row>
+
                 <v-col cols="12" md="2">
                   <v-checkbox
                     dense
@@ -194,6 +193,8 @@
                     label="Залоговый объект"
                   ></v-checkbox>
                 </v-col>
+              </v-row>
+              <v-row>
 
                 <v-col cols="12" md="2">
                   <v-checkbox
@@ -206,19 +207,37 @@
 
                 <v-col cols="12" md="2">
                   <v-checkbox
-                          dense
-                          v-model="filters.redevelopment"
-                          value="yes"
-                          label="Перепланировка"
+                    dense
+                    v-model="filters.redevelopment"
+                    value="yes"
+                    label="Перепланировка"
                   ></v-checkbox>
                 </v-col>
 
                 <v-col cols="12" md="2">
                   <v-checkbox
-                          dense
-                          v-model="filters.express_issue"
-                          value="yes"
-                          label="Экспресс выдача"
+                    dense
+                    v-model="filters.express_issue"
+                    value="yes"
+                    label="Экспресс выдача"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="2">
+                  <v-checkbox
+                    dense
+                    v-model="filters.businesman"
+                    value="yes"
+                    label="Собсвенники бизнеса и ИП"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col cols="12" md="2">
+                  <v-checkbox
+                    dense
+                    v-model="filters.non_resident"
+                    value="yes"
+                    label="Не резиденты РФ"
                   ></v-checkbox>
                 </v-col>
 
@@ -255,6 +274,9 @@
                     label="Программы с преференциями"
                   ></v-checkbox>
                 </v-col>
+
+
+
               </v-row>
             </template>
             <v-row>
@@ -560,6 +582,36 @@
                           >
 
                           {{ mort.work_experience }} месяцев
+                        </span>
+
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                          >Собсвенники бизнеса и ИП:</span
+                          >
+                          {{
+                            mort.businesman == "yes"
+                              ? "Да"
+                              : mort.businesman == "no"
+                              ? "Нет"
+                              : ""
+                          }}{{
+                            mort.businesman_comment ? ", " + mort.businesman_comment : ""
+                          }}
+                        </span>
+
+                        <span class="caption">
+                          <span class="font-weight-black before-span-text"
+                          >Не резиденты РФ:</span
+                          >
+                          {{
+                            mort.non_resident == "yes"
+                              ? "Да"
+                              : mort.non_resident == "no"
+                              ? "Нет"
+                              : ""
+                          }}{{
+                            mort.non_resident_comment ? ", " + mort.non_resident_comment : ""
+                          }}
                         </span>
                       </v-list-item-content>
                     </v-list-item>

@@ -294,6 +294,52 @@
 
                         <v-row class="mb-7">
                           <v-col cols="12" sm="4" md="4">
+                            <v-select
+                              v-model="editedItem.businesman"
+                              :items="itemsYesNo"
+                              item-text="text"
+                              item-value="value"
+                              label="Собсвенники бизнеса и ИП"
+                              dense
+                            ></v-select>
+                          </v-col>
+                          <v-col cols="12" sm="4" md="8">
+                            <v-textarea
+                              v-model="editedItem.businesman_comment"
+                              label="Комментарий к Собсвенники бизнеса и ИП"
+                              placeholder=" "
+                              auto-grow
+                              rows="1"
+                              dense
+                            ></v-textarea>
+                          </v-col>
+                        </v-row>
+
+                        <v-row class="mb-7">
+                          <v-col cols="12" sm="4" md="4">
+                            <v-select
+                              v-model="editedItem.non_resident"
+                              :items="itemsYesNo"
+                              item-text="text"
+                              item-value="value"
+                              label="Не резиденты РФ"
+                              dense
+                            ></v-select>
+                          </v-col>
+                          <v-col cols="12" sm="4" md="8">
+                            <v-textarea
+                              v-model="editedItem.non_resident_comment"
+                              label="Комментарий к Не резиденты РФ"
+                              placeholder=" "
+                              auto-grow
+                              rows="1"
+                              dense
+                            ></v-textarea>
+                          </v-col>
+                        </v-row>
+
+                        <v-row class="mb-7">
+                          <v-col cols="12" sm="4" md="4">
                             <v-textarea
                               v-model="editedItem.co_borrowers"
                               label="Созаемщики"
@@ -1155,6 +1201,21 @@ export default {
       formData[
         "spouse_exclusion_comment"
       ] = this.editedItem.spouse_exclusion_comment;
+
+      formData[
+        "businesman"
+        ] = this.editedItem.businesman;
+      formData[
+        "businesman_comment"
+        ] = this.editedItem.businesman_comment;
+
+      formData[
+        "non_resident"
+        ] = this.editedItem.non_resident;
+      formData[
+        "non_resident_comment"
+        ] = this.editedItem.non_resident_comment;
+
 
       formData["co_borrowers"] = this.editedItem.co_borrowers;
       formData["commission"] = this.editedItem.commission;

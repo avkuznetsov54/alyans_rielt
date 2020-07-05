@@ -63,6 +63,10 @@ class MortgageProgramsSerializer(serializers.ModelSerializer):
                   'seller_registration',
                   'express_issue',
                   'inclusion_children',
+                  'businesman',
+                  'businesman_comment',
+                  'non_resident',
+                  'non_resident_comment',
                   'room',
                   'room_comment',
                   'share',
@@ -117,45 +121,19 @@ class MortgageProgramsSerializer(serializers.ModelSerializer):
     #     return instance
 
 
-class MortgageProgSer(serializers.ModelSerializer):
+class ShadowMortgageProgSerializer(serializers.ModelSerializer):
     class Meta:
         model = MortgagePrograms
-        fields = ('programs_bank',
-                  'programs_target',
-                  'programs_name',
-                  'rate',
-                  'rate_salary',
-                  'first_payment',
-                  'min_sum_credit',
-                  'max_sum_credit',
-                  'min_time_credit',
-                  'max_time_credit',
-                  'min_borrower_age',
-                  'max_borrower_age',
-                  'work_experience',
-                  'mandatory_documents',
-                  'proof_of_income_document',
-                  'time_for_bank_decision',
-                  'understatement_is_active',
-                  'understatement_comment',
-                  'co_borrowers',
-                  'commission',
-                  'seller_registration',
-                  'express_issue',
-                  'inclusion_children',
-                  'room',
-                  'room_comment',
-                  'share',
-                  'share_comment',
-                  'private_house',
-                  'private_comment',
-                  'apartments',
-                  'apartments_comment',
-                  'redevelopment',
-                  'redevelopment_comment',
-                  'overlap',
-                  'storeys',
-                  'housing_wear',
-                  'req_tech_docs',
-                  'add_info'
-                  )
+        fields = '__all__'
+
+
+class ShadowTargetCreditsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TargetCredits
+        fields = '__all__'
+
+
+class ShadowBanksSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Banks
+        fields = '__all__'

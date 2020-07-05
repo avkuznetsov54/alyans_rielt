@@ -17,3 +17,15 @@ class IsMortgageEditorOrAuthenticatedReadOnly(permissions.BasePermission):
             return False
             # return Response(status=status.HTTP_404_NOT_FOUND)
             # raise PermissionDenied({"message": "You don't have permission to access"})
+
+
+class IsShadow(permissions.BasePermission):
+    def has_permission(self, request, view):
+        # print(request.query_params.items())
+        for k, v in request.query_params.items():
+            # print(k, v)
+            if k == 'token_shadow':
+                if v == 'Ctujlyz456':
+                    return True
+        return False
+

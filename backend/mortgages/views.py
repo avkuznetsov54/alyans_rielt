@@ -7,9 +7,10 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions, DjangoObjectPermissions
 
-from mortgages.permissions import IsMortgageEditorOrAuthenticatedReadOnly
+from mortgages.permissions import IsMortgageEditorOrAuthenticatedReadOnly, IsShadow
 from .models import MortgagePrograms, Banks, TargetCredits
-from .serializers import MortgageProgramsSerializer, BanksSerializer, TargetCreditsSerializer, MortgageProgSer
+from .serializers import MortgageProgramsSerializer, BanksSerializer, TargetCreditsSerializer, \
+    ShadowMortgageProgSerializer, ShadowTargetCreditsSerializer, ShadowBanksSerializer
 
 import re
 
@@ -133,6 +134,14 @@ class MortgageProgramsView(generics.ListAPIView):
                 # params.update({k: v})
                 params.append(Q(redevelopment=v))
 
+            if k == 'businesman':
+                # params.update({k: v})
+                params.append(Q(businesman=v))
+
+            if k == 'non_resident':
+                # params.update({k: v})
+                params.append(Q(non_resident=v))
+
             if k == 'wetpoint_transfer':
                 # params.update({k: v})
                 params.append(Q(wetpoint_transfer=v))
@@ -187,3 +196,22 @@ class TargetCreditsViewSet(ModelViewSet):
     serializer_class = TargetCreditsSerializer
     queryset = TargetCredits.objects.all()
     permission_classes = (IsMortgageEditorOrAuthenticatedReadOnly,)
+
+
+class ShadowProgramsView(generics.ListAPIView):
+    serializer_class = ShadowMortgageProgSerializer
+    queryset = MortgagePrograms.objects.all().select_related('programs_bank').prefetch_related('programs_target')
+    pagination_class = MortgagePagination
+    permission_classes = (IsShadow, )
+
+
+class ShadowBankViewSet(generics.ListAPIView):
+    serializer_class = ShadowBanksSerializer
+    queryset = Banks.objects.all()
+    permission_classes = (IsShadow, )
+
+
+class ShadowTargetCreditsViewSet(generics.ListAPIView):
+    serializer_class = ShadowTargetCreditsSerializer
+    queryset = TargetCredits.objects.all()
+    permission_classes = (IsShadow, )
